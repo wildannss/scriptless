@@ -116,13 +116,19 @@ cd /root/idena
 curl -s https://api.github.com/repos/idena-network/idena-go/releases/latest | grep browser_download_url | grep idena-node-linux- | cut -d '"' -f 4 | head -n 1 | wget -qi -
 mv idena-node-linux* idena-go
 chmod +x idena-go
+echo "{\"IpfsConf\":{\"Profile\": \"server\" ,\"FlipPinThreshold\":1},\"Sync\": {\"LoadAllFlips\": true, \"AllFlipsLoadingTime\":7200000000000}}" >> /root/idena/config.json
+npm i npm@latest -g
+git clone https://github.com/idena-network/idena-node-proxy
+cd /root/idena/idena-node-proxy
+npm i -g pm2
+cd /root/idena
 mkdir -p /root/idena/datadir
 cd /root/idena/datadir
 touch /root/idena/datadir/api.key
-echo '5593ef6844c8e3ce1c5cd41896299ebd' >> /root/idena/datadir/api.key
+echo 'xxxapikeyxxx' >> /root/idena/datadir/api.key
 mkdir -p /root/idena/datadir/keystore
 touch /root/idena/datadir/keystore/nodekey
-echo '28c13e09b4f990c44148916e990675881853e0e8e83295df3b497ea10fe40b91' >> /root/idena/datadir/keystore/nodekey
+echo 'xxxnodekeyxxx' >> /root/idena/datadir/keystore/nodekey
 cd /root/tools
 pm2 start notif.js --name=notif --node-args="--max-old-space-size=8192"
 pm2 stop notif
@@ -132,9 +138,6 @@ pm2 stop gunbot
 cd /root/bitrage.gunbot.my.id
 pm2 start gunthy-linux --name=bitrage-gunbot
 pm2 stop bitrage-gunbot
-cd /root/idena
-pm2 start ./idena-go --name=idena --node-args="--apikey=5593ef6844c8e3ce1c5cd41896299ebd"
-pm2 stop idena
 pm2 save --force
 
 exit 0
