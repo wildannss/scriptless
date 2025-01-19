@@ -86,6 +86,8 @@ chmod +x /etc/fail2ban/jail.local
 printf "[DEFAULT]\nignoreip = 127.0.0.1/89\n\n[sshd]\nenable = true\nport = ssh\nfilter = sshd\nlogpath = /var/log/auth.log\nmaxretry = 4\nbantime = 1d\nignoreip = 127.0.0.1\n\n[myjail]\nenabled = true\nport = 80,8080,443,22,10000\nmaxretry = 6\nbantime = 1d">>/etc/fail2ban/jail.local
 systemctl enable fail2ban.service
 systemctl start fail2ban
+source ~/.bashrc
+command
 sudo apt autoremove -y
 sudo apt-get update
 sudo apt-get clean -y
