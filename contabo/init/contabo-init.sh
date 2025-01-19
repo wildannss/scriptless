@@ -3,7 +3,7 @@
 sudo apt-get update
 sudo apt-get clean -y
 sudo apt-get upgrade -y
-#[ -e '/etc/needrestart/needrestart.conf' ] && (printf "\n\$nrconf{restart} = 'a';" >> /etc/needrestart/needrestart.conf)
+[ -e '/etc/needrestart/needrestart.conf' ] && (printf "\n\$nrconf{restart} = 'a';" >> /etc/needrestart/needrestart.conf)
 wget https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
 sudo sh virtualmin-install.sh -f -v
 rm -rf virtualmin-install.sh virtualmin-install.log update.txt
@@ -86,8 +86,6 @@ chmod +x /etc/fail2ban/jail.local
 printf "[DEFAULT]\nignoreip = 127.0.0.1/89\n\n[sshd]\nenable = true\nport = ssh\nfilter = sshd\nlogpath = /var/log/auth.log\nmaxretry = 4\nbantime = 1d\nignoreip = 127.0.0.1\n\n[myjail]\nenabled = true\nport = 80,8080,443,22,10000\nmaxretry = 6\nbantime = 1d">>/etc/fail2ban/jail.local
 systemctl enable fail2ban.service
 systemctl start fail2ban
-source ~/.bashrc
-command
 sudo apt autoremove -y
 sudo apt-get update
 sudo apt-get clean -y
