@@ -3,7 +3,7 @@
 sudo apt-get update
 sudo apt-get clean -y
 sudo apt-get upgrade -y
-[ -e '/etc/needrestart/needrestart.conf' ] && (printf "\n\$nrconf{restart} = 'a';" >> /etc/needrestart/needrestart.conf)
+#[ -e '/etc/needrestart/needrestart.conf' ] && (printf "\n\$nrconf{restart} = 'a';" >> /etc/needrestart/needrestart.conf)
 wget https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
 sudo sh virtualmin-install.sh -f -v
 rm -rf virtualmin-install.sh virtualmin-install.log update.txt
