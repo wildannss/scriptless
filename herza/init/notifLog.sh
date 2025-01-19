@@ -6,4 +6,4 @@ login_name="$(whoami)"
 
 message="*Host:* $HOSTNAME"$'\n'"*User:* $login_name"$'\n'"*IP:* $login_ip"$'\n'"$login_date"
 
-python /home/notifLog.py "$message"
+python /root/tools/notifLog.py "$message"
