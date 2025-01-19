@@ -87,6 +87,7 @@ rm -rf gunthy_linux.zip __MACOSX
 cd
 chmod +x gunbot.my.id
 chmod +x /root/gunbot.my.id/gunthy-linux
+\cp -avrf /root/gunbot.my.id /root/bitrage.gunbot.my.id
 sudo apt autoremove -y
 a2enmod rewrite
 a2enmod headers
