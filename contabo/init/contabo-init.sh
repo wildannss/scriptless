@@ -55,10 +55,6 @@ chmod 600 /swapfile
 mkswap /swapfile
 swapon /swapfile
 echo '/swapfile none swap sw 0 0' | tee -a /etc/fstab
-cd
-sudo addgroup sftp
-sudo useradd -m sftpuser -g sftp
-sudo chmod 700 /home/sftpuser
 sudo apt-get clean -y
 echo "" >> /etc/crontab
 echo "@daily root sudo apt-get update" >> /etc/crontab
