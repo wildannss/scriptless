@@ -9,15 +9,12 @@ sudo sh virtualmin-install.sh -f -v
 rm -rf virtualmin-install.sh virtualmin-install.log update.txt
 sudo apt-get update
 sudo apt-get clean -y
-sudo apt-get upgrade -y
 sudo apt-get install -y wget curl unzip zip screen iptables fail2ban git fontconfig rar dos2unix
 sudo apt-get update
 sudo apt-get clean -y
-sudo apt-get upgrade -y
 sudo -v ; curl https://rclone.org/install.sh | sudo bash
 sudo apt-get update
 sudo apt-get clean -y
-sudo apt-get upgrade -y
 curl -fsSL https://deb.nodesource.com/setup_23.x | sudo -E bash -
 sudo apt-get install -y nodejs
 npm install pm2@latest -g
