@@ -71,7 +71,7 @@ chmod +x /root/gd_bu/.sh
 zip -r /root/gd_bu/.sh.zip /root/gd_bu/.sh
 curl -s -X POST https://api.telegram.org/bot1899238854:AAH0tUYroXQLLmDw-sED2lzlE-ao2UpUbzM/sendMessage -d chat_id=277081400 -d text="Backup Semua Scaleway File SH Selesai"
 
-rclone copy --progress --drive-acknowledge-abuse --update --local-no-check-updated --ignore-checksum /root/gd_bu/ decell-gdrive:Scaleway
+rclone copy --progress --drive-acknowledge-abuse --update --local-no-check-updated --ignore-checksum /root/gd_bu/ ws-onedrive:Server/Backup/Scaleway
 
 rm -rf /root/bekap_json/
 rm -rf /root/gd_bu
