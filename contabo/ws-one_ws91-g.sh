@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd
-if ! screen -list | grep -q "bekap"; then
+if ! screen -list | grep -q "ws-one_ws91-g"; then
     screen -dmSL ws-one_ws91-g rclone copy --progress --drive-acknowledge-abuse --update --local-no-check-updated --ignore-checksum ws-onedrive: ws91-gdrive:
 fi
 
