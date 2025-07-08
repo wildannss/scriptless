@@ -65,8 +65,6 @@ echo "@daily root pm2 restart notif" >> /etc/crontab
 echo "" >> /etc/crontab
 echo "* * * * * root sudo ntpdate -s time.nist.gov" >> /etc/crontab
 echo "" >> /etc/crontab
-echo "* * * * * root /root/idena.sh" >> /etc/crontab
-echo "" >> /etc/crontab
 echo "* * * * * root [ -f /var/run/reboot-required ] && reboot" >> /etc/crontab
 chmod +x /etc/fail2ban/jail.local
 printf "[DEFAULT]\nignoreip = 127.0.0.1/89\n\n[sshd]\nenable = true\nport = ssh\nfilter = sshd\nlogpath = /var/log/auth.log\nmaxretry = 4\nbantime = 1d\nignoreip = 127.0.0.1\n\n[myjail]\nenabled = true\nport = 80,8080,443,22,10000\nmaxretry = 6\nbantime = 1d">>/etc/fail2ban/jail.local
